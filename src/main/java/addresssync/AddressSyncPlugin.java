@@ -23,11 +23,11 @@ import ghidra.program.util.ProgramLocation;
 
 //@formatter:off
 @PluginInfo(
-	status = PluginStatus.UNSTABLE,
+	status = PluginStatus.STABLE,
 	packageName = "AddressSync",
 	category = PluginCategoryNames.SELECTION,
 	shortDescription = "Synchronize currently selected address to external program",
-	description = "Listens on localhost:1080 (UDP) for 64-bit address and sets Listing and Decompiler cursor position to specified address."
+	description = "Listens on 127.0.0.1:1080 (UDP) for 64-bit address and sets Listing and Decompiler cursor position to specified address."
 )
 //@formatter:on
 public class AddressSyncPlugin extends ProgramPlugin {
