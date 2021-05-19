@@ -13,13 +13,13 @@ import ghidra.program.model.address.AddressOutOfBoundsException;
 import ghidra.program.model.listing.Program;
 
 public class SyncServer extends Thread {
-	private int port;
 	private PluginTool plugin;
 	private Program currProgram;
+	private int port;
 
 	public SyncServer(PluginTool plugin, int port) {
-		this.port = port;
 		this.plugin = plugin;
+		this.port = port;
 		this.currProgram = null;
 	}
 
@@ -37,7 +37,7 @@ public class SyncServer extends Thread {
 
 		try {
 			sock = new DatagramSocket(null);
-			InetSocketAddress sockAddr = new InetSocketAddress("localhost", 1080);
+			InetSocketAddress sockAddr = new InetSocketAddress("localhost", this.port);
 			sock.bind(sockAddr);
 		} catch (SocketException e) {
 			e.printStackTrace();
